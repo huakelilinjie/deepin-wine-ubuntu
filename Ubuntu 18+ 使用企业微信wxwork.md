@@ -113,8 +113,10 @@ WINEPREFIX=~/.deepinwine/Deepin-WeChat deepin-wine regedit msyh_config.reg
 
 4. 重新启动wxwork
 
+# 5.解决WXWork无法发送图片问题
+执行命令 `sudo apt install libjpeg62:i386`
 
-# 5.升级wxwork至最新版
+# 6.升级wxwork至最新版
 
 1.下载最新版企业微信 .exe文件
 
@@ -127,10 +129,12 @@ WINEPREFIX=~/.deepinwine/Deepin-WeChat deepin-wine regedit msyh_config.reg
 5.然后将刚才解压的文件夹拖动进来改名为WXWork  重新打开企业微信即可
 
 
-# 6.参考链接
+# 7.参考链接
 
 https://github.com/wszqkzqk/deepin-wine-ubuntu
 
 https://gist.github.com/koolay/bd4fc85da13d7047c262eafc7b4640ce
+
+https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu/issues/ILQCW
 
 https://bbs.deepin.org/forum.php?mod=viewthread&tid=187933
