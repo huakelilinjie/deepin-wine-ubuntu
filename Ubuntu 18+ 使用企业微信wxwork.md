@@ -1,5 +1,5 @@
 
-1. 安装Deepin-wine
+###### 1. 安装Deepin-wine
 
 本地安装(Ubuntu/Debian通用)
 克隆 (git clone https://github.com/wszqkzqk/deepin-wine-ubuntu.git) 或下载到本地。
@@ -16,19 +16,21 @@ KDE或其他按照普通安装方式安装后运行出现X错误的桌面环境�
 解压后切换到解压文件目录，在终端中运行（授予可执行权限后）： ./install_2.8.22.sh
 
 
-2.安装deepin-wine-wxwork
-
+###### 2.安装deepin-wine-wxwork
 下载地址如下：（PS：我选的是deepin.com.wechat_2.6.8.65deepin0_i386.deb）
-
 https://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.wechat/
 
 使用命令 sudo dpkg -i deepin.com.wechat_2.6.8.65deepin0_i386.deb即可
 
 
-3.解决乱码问题
+###### 3.解决乱码问题
 3.1．查看应用是怎么运行的
 
+```
 cat /usr/share/applications/deepin.com.wechat.desktop
+```
+
+```
 #!/usr/bin/env xdg-open
 [Desktop Entry]
 Encoding=UTF-8
@@ -42,9 +44,15 @@ Name[zh_CN]=微信
 Comment=Tencent WeChat Client on Deepin Wine
 StartupWMClass=WeChat.exe
 MimeType=
+```
+
 3.２．查看运行脚本
 
+```
 cat /opt/deepinwine/apps/Deepin-WeChat/run.sh
+```
+
+```
 #!/bin/sh
 # Copyright (C) 2016 Deepin, Inc.
 #
@@ -58,37 +66,40 @@ if [ -n "$EXEC_PATH" ];then
 else
 /opt/deepinwine/tools/run_v2.sh $BOTTLENAME $APPVER "uninstaller.exe" "$@"
 fi
+```
 
+3.３．修改对应脚本
 
- 3.３．修改对应脚本
-
+```
 sudo vim /opt/deepinwine/tools/run_v2.sh
-
-
+```
+```
 # 将 WINE_CMD 那一行修改为
 WINE_CMD="LC_ALL=zh_CN.UTF-8 deepin-wine"
+```
 
 
-
-4.修改字体(微软雅黑)
+###### 4.修改字体(微软雅黑)
 
 下载微软雅黑字体, msyh.ttc
 
 1.添加字体 cp msyh.ttc ~/.deepinwine/Deepin-WXWork/drive_c/windows/Fonts/
 
 2.修改系统注册表
-
+```
 gedit ~/.deepinwine/Deepin-WXWork/system.reg
-
-
+```
+```
 #修改以下两行
 "MS Shell Dlg"="msyh"
 "MS Shell Dlg 2"="msyh"
-
+```
 
 3.字体注册
-
+```
 vim msyh_config.reg 
+```
+```
 # 内容添加
 REGEDIT4
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink]
@@ -100,15 +111,16 @@ REGEDIT4
 "msyh"="msyh.ttc"
 "Arial"="msyh.ttc"
 "Arial Black"="msyh.ttc"
-
-
+```
+```
 #注册
 WINEPREFIX=~/.deepinwine/Deepin-WeChat deepin-wine regedit msyh_config.reg
+```
 
 4. 重新启动wxwork
 
 
-5.升级wxwork至最新版
+###### 5.升级wxwork至最新版
 
 1.下载最新版企业微信 .exe文件
 
