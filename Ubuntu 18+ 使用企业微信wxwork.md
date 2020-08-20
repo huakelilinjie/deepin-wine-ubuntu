@@ -6,19 +6,19 @@
 
 当然也可以选择下载releases：Github 或者 Gitee
 
-解压后切换到解压文件目录，在终端中运行（授予可执行权限后）： ./install.sh
+解压后切换到解压文件目录，在终端中运行（授予可执行权限后）： `./install.sh`
 
-KDE或其他按照普通安装方式安装后运行出现X错误的桌面环境执行 ./KDE-install.sh ）。
+KDE或其他按照普通安装方式安装后运行出现X错误的桌面环境执行 `./KDE-install.sh` ）。
 
 本地安装deepin-wine的官方最新环境(目前2.18-22版本/仅ubuntu测试)
-解压后切换到解压文件目录，在终端中运行（授予可执行权限后）： ./install_2.8.22.sh
+解压后切换到解压文件目录，在终端中运行（授予可执行权限后）： `./install_2.8.22.sh`
 
 
 # 2.安装deepin-wine-wxwork
 下载地址如下：（PS：我选的是deepin.com.wechat_2.6.8.65deepin0_i386.deb）
 https://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.wechat/
 
-使用命令 sudo dpkg -i deepin.com.wechat_2.6.8.65deepin0_i386.deb即可
+使用命令 `sudo dpkg -i deepin.com.wechat_2.6.8.65deepin0_i386.deb` 即可
 
 
 # 3.解决乱码问题
@@ -75,9 +75,9 @@ WINE_CMD="LC_ALL=zh_CN.UTF-8 deepin-wine"
 
 
 # 4.修改字体(微软雅黑)
-下载微软雅黑字体, msyh.ttc
+下载微软雅黑字体, [msyh.ttc](https://raw.githubusercontent.com/owent-utils/font/master/%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91/MSYH.TTC)
 
-1.添加字体 cp msyh.ttc ~/.deepinwine/Deepin-WXWork/drive_c/windows/Fonts/
+1.添加字体 `cp msyh.ttc ~/.deepinwine/Deepin-WXWork/drive_c/windows/Fonts/`
 
 2.修改系统注册表
 ```
